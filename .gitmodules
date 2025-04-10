@@ -1,0 +1,3 @@
+[submodule "qa_automation_cource"]
+	path = qa_automation_cource
+	url = git@github.com:voki-sitnikava-p/qa_automation_cource.git
