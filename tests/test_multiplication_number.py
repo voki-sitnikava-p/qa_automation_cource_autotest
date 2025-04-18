@@ -13,7 +13,7 @@ class TestMultiplicationNumber:
 
     @pytest.mark.CRITICAL
     def test_multiplication_negative(self):
-        first_number = 'first'
-        second_number = 'second'
+        first_number = None
+        second_number = {1:2}
         assert BasicCalc.multiplication_number(first_number, '*', second_number) == 0, \
             "Didn't handle incorrect values for arguments"

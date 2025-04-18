@@ -15,7 +15,7 @@ class TestSubtractionNumber:
 
     @pytest.mark.CRITICAL
     def test_subtraction_negative(self):
-        first_number = 'first'
-        second_number = 'second'
+        first_number = ''
+        second_number = [1, 2]
         assert BasicCalc.subtraction_number(first_number, '-', second_number) == 0, \
             "Didn't handle incorrect values for arguments"

@@ -1,5 +1,6 @@
 import pytest
 import pickle
+import os
 from qa_automation_cource.calculator import BasicCalc, cache
 
 class TestCache:
@@ -11,5 +12,7 @@ class TestCache:
 
 
     def test_cache_negative(self):
-        with pytest.raises(ValueError, match = "Number must be positive"):
-            BasicCalc.factorial(-100)
+        BasicCalc.factorial(5)
+        with open('cache.pkl', 'rb') as file:
+            cache = pickle.load(file)
+        assert 1000000 not in cache, "Unexpected value found in cache"

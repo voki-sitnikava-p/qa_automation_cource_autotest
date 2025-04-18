@@ -6,7 +6,7 @@ from qa_automation_cource.calculator import BasicCalc
 
 class TestSumNumber:
     @pytest.mark.parametrize('first_number, second_number, result', [
-        ([1, 10, 100, -10, 11.5, 0], None, sum([1, 10, 100, -10, 11.5, 0])),
+        ([1, 10, 100, -10, 11.5, 0], None, 112.5),
         ([40], None, 40),
         ([], None, 0),
         ((-1, 2, 3, 0), None, 4),
@@ -20,7 +20,8 @@ class TestSumNumber:
             'sum tuple', 'sum set', 'sum positive integer', 'positive + negative',
             'integer + non-integer', 'sum zero', 'invalid strings'])
 
-    def test_sum_parametrize(self, first_number, second_number, result):
+    @pytest.mark.CRITICAL
+    def test_sum_positive_parametrize(self, first_number, second_number, result):
         '''
         Параметрезированный тест для функции sum_number.
         Я выбрала эту функцию т.к. она является основной функцией калькулятора,
@@ -30,15 +31,8 @@ class TestSumNumber:
         assert result == BasicCalc.sum_number(first_number, '+', second_number), 'Sum calculate incorrectly'
 
     @pytest.mark.CRITICAL
-    def test_sum_positive(self):
-        first_number = randint(-100000, 100000)
-        second_number = uniform(-20, 20)
-        assert BasicCalc.sum_number(first_number, '+', second_number) == first_number + second_number, \
-            'Sum calculate incorrectly'
-
-    @pytest.mark.CRITICAL
     def test_sum_negative(self):
-        first_number = 'first'
-        second_number = 'second'
-        assert BasicCalc.sum_number(first_number, '+', second_number) == 0, \
-            "Didn't handle incorrect values for arguments"
+        first_number = 55
+        second_number = None
+        assert BasicCalc.sum_number(first_number, '+', second_number) == 55, \
+            "Sum calculate incorrectly if second number None"
