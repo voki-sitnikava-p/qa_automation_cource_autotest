@@ -5,10 +5,6 @@ from qa_automation_cource.calculator import BasicCalc, NewCalc
 def calc():
     return BasicCalc()
 
-@pytest.fixture(scope="session")
-def new_calc():
-    return NewCalc()
-
 @pytest.fixture(scope="function")
 def new_calc_with_memory():
     calc = NewCalc()
