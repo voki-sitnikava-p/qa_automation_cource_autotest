@@ -1,0 +1,15 @@
+.DS_Store
+.idea/
+env/
+venv
+browserstack.yml
+__pycache__
+.python/
+**/.DS_Store
+artifacts
+allure-report*/
+allure-results*/
+*.log
+/.python/
+*.pyc
+__pycache__/

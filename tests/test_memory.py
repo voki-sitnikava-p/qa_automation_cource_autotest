@@ -5,7 +5,8 @@ class TestMemory:
         res_memory = new_calc_with_memory.memory()
         assert res_memory == ['-100', '0', '100'], 'Returned invalid result'
 
-    def test_memory_negative(self, new_calc_with_memory, tmp_path, monkeypatch):
-        monkeypatch.chdir(tmp_path)
-        result = new_calc_with_memory.memory()
+    def test_memory_negative(self, tmp_path, monkeypatch):
+        memory_file = tmp_path / "memory.txt"
+        monkeypatch.setattr(NewCalc, "memory_file", str(memory_file))
+        result = NewCalc.memory()
         assert result == [], 'Returned not empty list'
