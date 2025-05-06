@@ -1,1 +1,0 @@
-{'first_argument': 0, 'second_argument': 0, 'operation': '*', 'result': 0, 'date_log': '2025-04-23 14:11:34.336547', 'first_number_Type_Error': 'Invalid format of first number. Number replaced with 0', 'second_number_Type_Error': 'Invalid format of second number. Number replaced with 0'}
